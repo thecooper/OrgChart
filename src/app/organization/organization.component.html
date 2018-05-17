@@ -1,0 +1,6 @@
+<app-person [Person]="Node.value"></app-person>
+<div class='subordinate-wrapper'>
+  <div *ngFor="let node of Node.subordinateNodes">
+    <app-organization-chart [Node]="node"></app-organization-chart>
+  </div>
+</div>
