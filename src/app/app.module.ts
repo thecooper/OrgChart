@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { PersonComponent } from './person/person.component';
 import { PeopleService } from './people.service';
-import { CanvasComponent } from './canvas/canvas.component';
-import { CanvasService } from './canvas.service';
 
 
 @NgModule({
@@ -15,12 +13,11 @@ import { CanvasService } from './canvas.service';
     AppComponent,
     OrganizationComponent,
     PersonComponent,
-    CanvasComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [ PeopleService, CanvasService ],
+  providers: [ PeopleService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

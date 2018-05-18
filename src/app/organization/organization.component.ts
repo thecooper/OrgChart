@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ElementRef, ViewChild, QueryList, ViewChildren } from '@angular/core';
 import { PeopleService } from '../people.service';
-import { OrgTree, OrgTreeNode } from '../org-tree';
+import { OrgTree } from '../org-tree';
+import { OrgTreeNode } from '../org-tree-node';
 import { Person } from '../person';
 import { PersonComponent } from '../person/person.component';
 
@@ -10,7 +11,7 @@ import { PersonComponent } from '../person/person.component';
   styleUrls: ['./organization.component.scss']
 })
 export class OrganizationComponent {
-  @Input() Node : OrgTreeNode;
+  @Input() Node : OrgTreeNode = new OrgTreeNode();
 
   @ViewChild(PersonComponent) PersonComponent : PersonComponent;
   @ViewChildren(OrganizationComponent) OrganizationComponents : QueryList<OrganizationComponent>;
@@ -22,7 +23,7 @@ export class OrganizationComponent {
   ngAfterViewInit() {
     // console.log("In OrganizationComponent.ngAfterViewChecked()");
     this.OrganizationComponents.forEach(element => {
-      element.PersonComponent.drawLineBetweenPeople(this.PersonComponent);
+      
     });
   }
 }

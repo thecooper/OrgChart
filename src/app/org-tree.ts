@@ -1,8 +1,9 @@
 import { Person } from "./person";
 import { PeopleService } from "./people.service";
+import { OrgTreeNode } from "./org-tree-node";
 
 export class OrgTree {
-    head : OrgTreeNode;
+    head : OrgTreeNode = null;
     buildComplete : boolean = false;
     valid : boolean = true;
   
@@ -41,12 +42,4 @@ export class OrgTree {
             console.error("Could not determine the head of the organizational chart!");
         }
     }
-}
-
-export class OrgTreeNode {
-    parentNode : OrgTreeNode;
-    value : Person;
-    subordinateNodes : OrgTreeNode[];
-
-    constructor() { this.subordinateNodes = []; }
 }
